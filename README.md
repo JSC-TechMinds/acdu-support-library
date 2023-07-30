@@ -64,6 +64,13 @@ These inputs are inteded for pushbuttons, limit switches, float switches etc. Do
 
 Input is intended for variable-resistance 2-wire sensors, e.g. NTC 100k temperature sensors and photoresistors. One screw terminal is connected to 12 V via 60 kΩ pull-up resistance and to GND (ground) via 750 kΩ resistance. The second screw terminal is connected to ground. With nothing connected, expect non-zero value on the ADC.
 
+### SD card
+
+ACDU supports micro SD cards, the slot is on the bottom side of the board. Please note some versions of the ACDU do not have a microSD card slot fitted. 
+The communication is done via the SPI serial interface. 
+
+**Important:** In order for the communication to work properly, it is necessary to remove the JP1 jumper.
+
 ### Pinout
 
 ![ACDU_pinout](https://github.com/JSC-electronics/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2-description.png)
@@ -73,6 +80,10 @@ Input is intended for variable-resistance 2-wire sensors, e.g. NTC 100k temperat
 | 1-Wire (for DS18B20 temperature sensors) | 18       |
 | I2C SDA (for SSD1306 OLED display)       | 25       |
 | I2C SCL                                  | 26       |
+| SPI MISO (for SD card)                   | 2        |
+| SPI MOSI                                 | 15       |
+| SPI SCK                                  | 14       |
+| SPI CS                                   | 13       |
 | PUSHBUTTON LEFT                          | 23       |
 | PUSHBUTTON MIDDLE                        | 22       |
 | PUSHBUTTON RIGHT                         | 21       |
