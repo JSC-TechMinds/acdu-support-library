@@ -30,11 +30,11 @@ void setup() {
     pinMode(BUTTON::PIN_RIGHT, INPUT);
 
     // Initialize 12V inputs.
-    pinMode(INPUT::DIGITAL::PIN_IN1, INPUT);
-    pinMode(INPUT::DIGITAL::PIN_IN2, INPUT);
+    pinMode(DIGITAL_INPUT::PIN_IN1, INPUT);
+    pinMode(DIGITAL_INPUT::PIN_IN2, INPUT);
 
     // Initialize 12V analog input intended for photoresistor, etc.
-    pinMode(INPUT::ANALOG::PIN_IN1, INPUT);
+    pinMode(ANALOG_INPUT::PIN_IN1, INPUT);
 }
 
 void loop() {
@@ -44,11 +44,11 @@ void loop() {
     if (!digitalRead(BUTTON::PIN_RIGHT)) Serial.println("Right button pressed.");
 
     // Check state of 12V digital inputs.
-    if (digitalRead(INPUT::DIGITAL::PIN_IN1)) Serial.println("12V IN1 activated");
-    if (digitalRead(INPUT::DIGITAL::PIN_IN2)) Serial.println("12V IN2 activated");
+    if (digitalRead(DIGITAL_INPUT::PIN_IN1)) Serial.println("12V IN1 activated");
+    if (digitalRead(DIGITAL_INPUT::PIN_IN2)) Serial.println("12V IN2 activated");
 
     // Check analog input.
-    Serial.print("Analog input ADC value: "); Serial.println(analogRead(INPUT::ANALOG::PIN_IN1));
+    Serial.print("Analog input ADC value: "); Serial.println(analogRead(ANALOG_INPUT::PIN_IN1));
     Serial.println();
 
     delay(3000);

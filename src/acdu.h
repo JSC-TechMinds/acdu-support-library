@@ -71,24 +71,20 @@ namespace SDCARD {
 //   1       1       0       H       L       CCW
 //   1       1       1       L       L       Brake (low-side slow decay)
 namespace MOTOR_DRIVER {
-    namespace INPUT {
-        namespace ANALOG {
-            static constexpr const uint8_t PIN_CURRENT = A0;
-        }
+    namespace ANALOG_INPUT {
+        static constexpr const uint8_t PIN_CURRENT = A0;
     }
 
-    namespace OUTPUT {
-        namespace DIGITAL {
-            static constexpr const uint8_t PIN_NSLEEP = 0;
-        }
+    namespace ANALOG_OUTPUT {
+        // Supports speed regulation using PWM. See examples.
+        // Naming reflects port names from datasheet. ESP32
+        // uses these ports for output.
+        static constexpr const uint8_t PIN_IN1 = 27;
+        static constexpr const uint8_t PIN_IN2 = 19;
+    }
 
-        namespace ANALOG {
-            // Supports speed regulation using PWM. See examples.
-            // Naming reflects port names from datasheet. ESP32
-            // uses these ports for output.
-            static constexpr const uint8_t PIN_IN1 = 27;
-            static constexpr const uint8_t PIN_IN2 = 19;
-        }
+    namespace DIGITAL_OUTPUT {
+        static constexpr const uint8_t PIN_NSLEEP = 0;
     }
 }
 
@@ -98,20 +94,19 @@ namespace BUTTON {
     static constexpr const uint8_t PIN_RIGHT = 21;
 }
 
-namespace INPUT {
-    namespace DIGITAL {
-        // 12V digital inputs.
-        // Usually used for limit switches.
-        // Pin 6 and 8 on the physical bus.
-        static constexpr const uint8_t PIN_IN1 = 34;
-        static constexpr const uint8_t PIN_IN2 = 35;
-    }
-    namespace ANALOG {
-        // 12V analog input.
-        // Usually used for photoresistor.
-        // Pin 10 on the physical bus.
-        static constexpr const uint8_t PIN_IN1 = A3;
-    }
+namespace DIGITAL_INPUT {
+    // 12V digital inputs.
+    // Usually used for limit switches.
+    // Pin 6 and 8 on the physical bus.
+    static constexpr const uint8_t PIN_IN1 = 34;
+    static constexpr const uint8_t PIN_IN2 = 35;
+}
+
+namespace ANALOG_INPUT {
+    // 12V analog input.
+    // Usually used for photoresistor.
+    // Pin 10 on the physical bus.
+    static constexpr const uint8_t PIN_IN1 = A3;   
 }
 
 #endif // ACDU_H

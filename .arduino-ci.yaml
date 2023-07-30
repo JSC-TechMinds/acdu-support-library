@@ -2,10 +2,7 @@ compile:
   libraries:
     - U8g2
     - SimpleTicker
-  platforms:
-    - esp32
-
-unittest:
-  libraries: ~
+    - OneWire
+    - DallasTemperature
   platforms:
     - esp32
