@@ -5,7 +5,7 @@
 [![GitHub release](https://img.shields.io/github/release/JSC-electronics/acdu-support-library.svg?maxAge=3600)](https://github.com/JSC-electronics/acdu-support-library/releases)
 [![JSC TechMinds](https://img.shields.io/badge/JSC-TechMinds-green.svg)](https://www.jsce.cz/)
 [![Donate](https://img.shields.io/badge/donate-PayPal-blueviolet.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SESX9ABM7V8KA&source=url)
-![ACDU_V2](documentation/ACDU-V2.PNG)
+![ACDU_V2](https://github.com/JSC-electronics/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2.png)
 
 The ACDU is a unit that contains one power output for DC motor or other DC load, two digital 12V inputs, one analog input and a connector for an OLED display. In addition, DS18B20 temperature sensors can be connected (5 in total).
 
@@ -66,7 +66,7 @@ Input is intended for variable-resistance 2-wire sensors, e.g. NTC 100k temperat
 
 ### Pinout
 
-![ACDU_V2](documentation/ACDU-V2-description.PNG)
+![ACDU_pinout](https://github.com/JSC-electronics/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2-description.png)
 
 | Signal                                   | ESP GPIO |
 |------------------------------------------|----------|
@@ -86,7 +86,7 @@ Input is intended for variable-resistance 2-wire sensors, e.g. NTC 100k temperat
 
 ### Dimensions
 
-![ACDU_V2](documentation/ACDU-V2-drawing.PNG)
+![dimensions](https://github.com/JSC-electronics/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2-drawing.png)
 
 ## Custom firmware
 
