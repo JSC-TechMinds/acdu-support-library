@@ -30,6 +30,10 @@
       "frameworks": "arduino"
     },
     {
+      "name": "OneWire",
+      "authors": "paulstoffregen"
+    },
+    {
       "name": "U8g2",
       "authors": "olikraus"
     },
