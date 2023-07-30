@@ -26,20 +26,12 @@
   "dependencies":
   [
     {
-      "name": "Wire",
-      "frameworks": "arduino"
-    },
-    {
       "name": "OneWire",
       "authors": "paulstoffregen"
     },
     {
       "name": "U8g2",
       "authors": "olikraus"
-    },
-    {
-      "name": "Ticker",
-      "authors": "jsc"
     }
   ],
   "frameworks": "arduino",

@@ -3,6 +3,7 @@ compile:
     - U8g2
     - OneWire
     - SimpleTicker
+    - DallasTemperature
   platforms:
     - esp32
 
