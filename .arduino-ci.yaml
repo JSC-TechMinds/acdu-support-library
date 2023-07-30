@@ -1,0 +1,11 @@
+compile:
+  libraries:
+    - U8g2
+    - SimpleTicker
+  platforms:
+    - esp32
+
+unittest:
+  libraries: ~
+  platforms:
+    - esp32

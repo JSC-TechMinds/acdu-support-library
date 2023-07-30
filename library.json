@@ -1,0 +1,43 @@
+{
+  "name": "ACDU",
+  "version": "1.0.0",
+  "keywords": "acdu, arduino, esp32",
+  "description": "Support library for our ACDU (automatic cover drive unit) board. It provides pin layout and examples to work with the unit. See the documentation.",
+  "license": "Apache-2.0",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/JSC-electronics/acdu-support-library"
+  },
+   "authors":
+  [
+    {
+      "name": "Vladimír Záhradník",
+      "email": "vladimir.zahradnik@jsce.cz",
+      "url": "https://github.com/vzahradnik",
+      "maintainer": true
+    },
+    {
+      "name": "JSC electronics",
+      "email": "development@jsce.cz",
+      "url": "https://github.com/jsc-electronics"
+    }
+  ],
+  "dependencies":
+  [
+    {
+      "name": "Wire",
+      "frameworks": "arduino"
+    },
+    {
+      "name": "U8g2",
+      "authors": "olikraus"
+    },
+    {
+      "name": "Ticker",
+      "authors": "jsc"
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "*"
+}
