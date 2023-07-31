@@ -7,7 +7,7 @@
 [![Donate](https://img.shields.io/badge/donate-PayPal-blueviolet.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SESX9ABM7V8KA&source=url)
 ![ACDU_V2](https://github.com/JSC-electronics/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2.png)
 
-The ACDU is a unit that contains one power output for DC motor or other DC load, two digital 12V inputs, one analog input and a connector for an OLED display. In addition, DS18B20 temperature sensors can be connected (5 in total).
+The ACDU is a unit that contains one power output for a DC motor or other DC load, two digital 12V inputs, one analog input, and a connector for an OLED display. Additionally, it can connect to DS18B20 temperature sensors (up to five in total).
 
 This configuration makes it suitable for automation tasks such as:
 
@@ -18,14 +18,14 @@ This configuration makes it suitable for automation tasks such as:
 
 ## Basic parameters and features
 
-- Power supply 9–15 V DC, reverse voltage protection and battery undervoltage protection
+- Power supply: 9–15 V DC with reverse voltage protection and battery undervoltage protection
 - SoC ESP32-WROVER-IE (supports BT and WiFi communication)
 - Driver DRV8220 for DC load control, max. load current 1,6 A
-- 2x 12V input with short-circuit protection
-- 1x analog input, intended for 2-wire sensors, e.g. NTC 100k temperature sensors, photoresistors
-- 1wire interface for up to 5 DS18B20 temperature sensors
-- 3x pushbutton, coneector for external 3-button keyboard (shared signals)
-- 1x connector for I2C OLED display
+- Two 12V inputs with short-circuit protection
+- One analog input, intended for 2-wire sensors, e.g., NTC 100k temperature sensors, photoresistors
+- One-wire interface for up to 5 DS18B20 temperature sensors
+- Three push buttons, connector for external 3-button keyboard (shared signals)
+- One connector for an I2C OLED display
 
 ## Quick-start guide
 
@@ -44,7 +44,7 @@ This configuration makes it suitable for automation tasks such as:
 
 A DC load (such as motors, relays, solenoid valves, heating elements etc.) with a current of max. 1.6 A can be connected to the power output (M).
 
-The DRV8220 driver uses PWM mode and allows to change the direction of rotation of the DC motor, braking and coasting. Three signals are used for control - nSleep, IN1 and IN2, the table below describes all possible signal combinations. The motor is connected to OUT1 and OUT2.
+The DRV8220 driver uses PWM mode and allows changing the direction of rotation of the DC motor, braking, and coasting. Three signals are used for control - nSleep, IN1, and IN2. The motor is connected to OUT1 and OUT2.
 
 | nSLEEP | IN1 | IN2 | OUT1 | OUT2 | DESCRIPTION                                          |
 |--------|-----|-----|------|------|------------------------------------------------------|
@@ -62,14 +62,13 @@ These inputs are inteded for pushbuttons, limit switches, float switches etc. Do
 
 ### 12V analog input (PR)
 
-Input is intended for variable-resistance 2-wire sensors, e.g. NTC 100k temperature sensors and photoresistors. One screw terminal is connected to 12 V via 60 kΩ pull-up resistance and to GND (ground) via 750 kΩ resistance. The second screw terminal is connected to ground. With nothing connected, expect non-zero value on the ADC.
+Input PR is intended for variable-resistance 2-wire sensors, e.g., NTC 100k temperature sensors and photoresistors. One screw terminal is connected to 12 V via a 60 kΩ pull-up resistor and to GND (ground) via a 750 kΩ resistor. The second screw terminal is connected to the ground. With nothing connected, expect a non-zero value on the ADC.
 
 ### SD card
 
-ACDU supports micro SD cards, the slot is on the bottom side of the board. Please note some versions of the ACDU do not have a microSD card slot fitted. 
-The communication is done via the SPI serial interface. 
+ACDU supports micro SD cards; the slot is on the bottom side of the board. Please note that some versions of the ACDU do not have a microSD card slot fitted. The communication is done via the SPI serial interface.
 
-**Important:** In order for the communication to work properly, it is necessary to remove the JP1 jumper.
+**Important:** For the communication to work properly, it is necessary to remove the JP1 jumper.
 
 ### Pinout
 
@@ -118,7 +117,7 @@ It is likely we can save you significant development time. Feel free to reach ou
 
 ## Contributing
 
-If you thing there is some feature missing in our ACDU unit or you encounter issue while using it, feel free to report an issue in this repository. We also offer commercial support. Perhaps if you work on something, we can help you with that.
+If you think there is a missing feature in our ACDU unit, or you encounter an issue while using it, feel free to report the issue in this repository. We also offer commercial support. Perhaps if you work on something, we can help you with that.
 
 ## License
 
@@ -128,6 +127,6 @@ Licensed under the [Apache-2.0](LICENSE) license.
 
 ## Support
 
-We hope our ACDU unit helped you in your project development. You can support our effort to convert coffe and pizza into a code with a small donation. Any support is much appreciated.
+We hope our ACDU unit has helped you in your project development. You can support our effort to convert coffee and pizza into code with a small donation. Any support is much appreciated.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SESX9ABM7V8KA&source=url)

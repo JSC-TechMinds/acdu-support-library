@@ -1,13 +1,14 @@
 /**
  *  @file       acdu.h
  *  Project     ACDU (automatic cover drive unit)
- *  @brief      Pin layout for the ACDU unit (HW revision 1 and 2).
+ *  @brief      Pin layout for the ACDU board (HW revision 1 and 2).
  *  @author     JSC TechMinds
- *  License     Apache-2.0 - Copyright (c) 2023 JSC TechMinds
+ *  @copyright  2023 JSC TechMinds
+ *  License     Apache-2.0
  *
  *  @section License
  *
- *  Copyright (c) 2023 JSC TechMinds
+ *  Copyright 2023 JSC TechMinds
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +30,7 @@
 
 namespace I2C {
     namespace OLED_DISPLAY {
-        // Not defined
+        // Not defined.
         static constexpr const uint8_t ADDRESS = 0x00;
         static constexpr const uint8_t SDA_PIN = 25;
         static constexpr const uint8_t SCL_PIN = 26;
@@ -37,10 +38,11 @@ namespace I2C {
 }
 
 namespace ONEWIRE {
-    // Usually used to fetch temperatures from 1-Wire
-    // sensors but any compatible device can be attached.
+    // Pin for the 1-Wire bus.
+    // Usually used to fetch temperatures from
+    // sensors, but any compatible device can be attached.
     // You can connect up to 4 external devices to the
-    // ports on the right side of ACDU.
+    // ports on the right side of the ACDU board.
     static constexpr const uint8_t PIN_ONEWIRE  = 18;
 }
 
@@ -59,8 +61,8 @@ namespace SDCARD {
     static constexpr const uint8_t PIN_CD = 5;  
 }
 
-// Pins to DRV8220 motor driver if you decide to use motor.
-// Motor is attached to pins 3 and 4 on the physical bus.
+// Pins for the DRV8220 motor driver if you decide to use a motor.
+// The motor is connected to pins 3 and 4 on the physical bus.
 // https://www.ti.com/product/DRV8220
 
 // Control mode logic table
@@ -71,20 +73,24 @@ namespace SDCARD {
 //   1       1       0       H       L       CCW
 //   1       1       1       L       L       Brake (low-side slow decay)
 namespace MOTOR_DRIVER {
-    namespace ANALOG_INPUT {
-        static constexpr const uint8_t PIN_CURRENT = A0;
+    namespace INPUTS {
+        namespace ANALOG_IN {
+            static constexpr const uint8_t PIN_CURRENT = A0;
+        }
     }
 
-    namespace ANALOG_OUTPUT {
-        // Supports speed regulation using PWM. See examples.
-        // Naming reflects port names from datasheet. ESP32
-        // uses these ports for output.
-        static constexpr const uint8_t PIN_IN1 = 27;
-        static constexpr const uint8_t PIN_IN2 = 19;
-    }
+    namespace OUTPUTS {
+        namespace DIGITAL_OUT {
+            static constexpr const uint8_t PIN_NSLEEP = 0;
+        }
 
-    namespace DIGITAL_OUTPUT {
-        static constexpr const uint8_t PIN_NSLEEP = 0;
+        namespace ANALOG_OUT {
+            // Supports speed control using PWM. See examples.
+            // Naming reflects port names from the datasheet.
+            // ESP32 uses these ports for output.
+            static constexpr const uint8_t PIN_IN1 = 27;
+            static constexpr const uint8_t PIN_IN2 = 19;
+        }
     }
 }
 
@@ -94,19 +100,23 @@ namespace BUTTON {
     static constexpr const uint8_t PIN_RIGHT = 21;
 }
 
-namespace DIGITAL_INPUT {
-    // 12V digital inputs.
-    // Usually used for limit switches.
-    // Pin 6 and 8 on the physical bus.
-    static constexpr const uint8_t PIN_IN1 = 34;
-    static constexpr const uint8_t PIN_IN2 = 35;
-}
+namespace INPUTS {
+    namespace DIGITAL_IN {
+        // Marked as SW1 and SW2 on the board.
+        // These are 12V digital inputs primarily used for limit switches.
+        // However, you can treat these pins as universal
+        // digital inputs.
+        static constexpr const uint8_t PIN_SW1 = 34;
+        static constexpr const uint8_t PIN_SW2 = 35;
+    }
 
-namespace ANALOG_INPUT {
-    // 12V analog input.
-    // Usually used for photoresistor.
-    // Pin 10 on the physical bus.
-    static constexpr const uint8_t PIN_IN1 = A3;   
+    namespace ANALOG_IN {
+        // Marked as PR on the board.
+        // This is a 12V analog input primarily used for a photoresistor.
+        // However, you can treat this pin as a universal analog
+        // or digital input.
+        static constexpr const uint8_t PIN_PR = A3;
+    }
 }
 
 #endif // ACDU_H

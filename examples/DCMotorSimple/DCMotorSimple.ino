@@ -34,14 +34,14 @@ void setup() {
     Serial.begin(9600);
 
     // Initialize motor outputs.
-    pinMode(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, OUTPUT);
-    pinMode(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, OUTPUT);
-    pinMode(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, OUTPUT);
+    pinMode(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, OUTPUT);
+    pinMode(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, OUTPUT);
+    pinMode(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, OUTPUT);
 
     // Put motor into IDLE.
-    digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, LOW);
-    digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, LOW);
-    digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, LOW);
+    digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, LOW);
+    digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, LOW);
+    digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, LOW);
 }
 
 void loop() {
@@ -56,34 +56,34 @@ void loop() {
     switch (ms) {
         case IDLE: {
             Serial.println("IDLE");
-            digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, LOW);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, LOW);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, LOW);
             ms = RUN_CW;
             break;
         }
         case RUN_CW: {
             Serial.println("Run CW");
-            digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, LOW);
             ms = BRAKE;
             break;
         }
         case RUN_CCW: {
             Serial.println("Run CCW");
-            digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, LOW);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, HIGH);
             ms = IDLE;
             break;
         }
 
         case BRAKE: {
             Serial.println("BRAKE");
-            digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, HIGH);
             ms = RUN_CCW;
             break;
         }

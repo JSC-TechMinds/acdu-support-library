@@ -1,7 +1,7 @@
 /**
- * @brief DS18B20 temperature sensor example.
+ * @brief Example for DS18B20 temperature sensor.
  *
- * Measures temperature once per second. Uses DallasTemperature library.
+ * This example measures temperature once per second using the DallasTemperature library.
  * 
  * Copyright 2023 JSC TechMinds
  *
@@ -18,10 +18,20 @@
  * limitations under the License.
  */
 
-// There is a bug in arduino-cli which treats compile warnings on ESP32 as errors.
-// We have such an error in OneWire library which is a dependency of this library.
-// Until the bug is properly resolved, we will blacklist this test.
-// Related issue: https://github.com/Arduino-CI/arduino_ci/issues/331
+// The ESP32 boards platform developers decided to treat compiler warnings as errors.
+// The OneWire library has a few unused variables, which causes
+// this example to fail. The fix is already in OneWire master branch.
+// We just have to wait until a new release is made. Until then
+// we have disabled this test.
+//
+// To run this example, comment out the #define TEST_BLACKLISTED line.
+//
+// Related issues:
+// https://github.com/arduino/arduino-cli/issues/2252
+// https://github.com/Arduino-CI/arduino_ci/issues/331
+// https://github.com/PaulStoffregen/OneWire/issues/74
+// https://github.com/PaulStoffregen/OneWire/pull/118
+
 #define TEST_BLACKLISTED
 
 #ifndef TEST_BLACKLISTED

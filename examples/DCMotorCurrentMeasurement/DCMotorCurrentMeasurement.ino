@@ -1,8 +1,10 @@
 /**
- * @brief Demonstrates motor current measurement.
+ * @brief Demonstrates how to measure motor current.
  *
- * This sketch demonstrates current measurement of a DC motor. The analog value on input A0 (GPIO36) is measured, the ADC value increases with increasing current. 
- * The code uses Ticker therefore it is non-blocking. We recommend to use Serial plotter for this demonstration.
+ * This sketch demonstrates the current measurement of a DC motor. The analog value
+ * on input A0 (GPIO36) is measured; the ADC value increases with increasing current.
+ * The code uses the Ticker library; therefore, it is non-blocking. We recommend
+ * using the Serial plotter for this demonstration.
  * 
  * Copyright 2023 JSC TechMinds
  *
@@ -19,7 +21,7 @@
  * limitations under the License.
  */
 
-// Note: This library uses Ticker library by JSC electronics.
+// Note: This library uses the Ticker library by JSC Electronics.
 // You can find it at https://github.com/JSC-electronics/Ticker.
 
 #include <acdu.h>
@@ -45,17 +47,17 @@ void setup() {
     Serial.begin(115200);
 
     // Initialize motor outputs.
-    pinMode(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, OUTPUT);
-    pinMode(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, OUTPUT);
-    pinMode(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, OUTPUT);
+    pinMode(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, OUTPUT);
+    pinMode(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, OUTPUT);
+    pinMode(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, OUTPUT);
 
     // Put motor to IDLE.
-    digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, LOW);
-    digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, LOW);
-    digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, LOW);
+    digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, LOW);
+    digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, LOW);
+    digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, LOW);
 
     // Initialize motor current analog input.
-    pinMode(MOTOR_DRIVER::ANALOG_INPUT::PIN_CURRENT, INPUT);
+    pinMode(MOTOR_DRIVER::INPUTS::ANALOG_IN::PIN_CURRENT, INPUT);
 
     // Initialize tickers.
     motorActionTicker.attach_ms(3000, motorAction);
@@ -77,33 +79,33 @@ void motorAction() {
     */
     switch (ms) {
         case IDLE: {
-            digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, LOW);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, LOW);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, LOW);
             ms = RUN_CW;
         }
         break;
 
         case RUN_CW: {
-            digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, LOW);
             ms = BRAKE;
         }
         break;
 
         case RUN_CCW: {
-            digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, LOW);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, LOW);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, HIGH);
             ms = IDLE;
         }
         break;
 
         case BRAKE: {
-            digitalWrite(MOTOR_DRIVER::DIGITAL_OUTPUT::PIN_NSLEEP, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN1, HIGH);
-            digitalWrite(MOTOR_DRIVER::ANALOG_OUTPUT::PIN_IN2, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::DIGITAL_OUT::PIN_NSLEEP, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN1, HIGH);
+            digitalWrite(MOTOR_DRIVER::OUTPUTS::ANALOG_OUT::PIN_IN2, HIGH);
             ms = RUN_CCW;
         }
         break;
@@ -111,11 +113,11 @@ void motorAction() {
 }
 
 void analogMeasurement() {
-    int a1 = analogReadMilliVolts(MOTOR_DRIVER::ANALOG_INPUT::PIN_CURRENT); 
+    int a1 = analogReadMilliVolts(MOTOR_DRIVER::INPUTS::ANALOG_IN::PIN_CURRENT); 
 
     // The voltage must be divided by 5, because the gain of the OpAmp on the board is 5.
-    // Rsense value is 0.22 Ohm.
-    // Note that the measured current value is approximate, the value 1.05 is the measurement correction. 
+    // The Rsense value is 0.22 Ohm.
+    // Note that the measured current value is approximate; the value 1.05 is used for measurement correction.
     float current = a1*1.05/(5*0.22);
     Serial.println(current);
 }
