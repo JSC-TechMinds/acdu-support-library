@@ -51,7 +51,7 @@ When using the ESP-PROG programmer, there are typically two available COM ports.
 
 In the Platformio IDE, set up board and COM port in platformio.ini file:
 
-```
+```ini
 [env:acdu]
 platform = espressif32
 framework = arduino
@@ -59,6 +59,8 @@ board = esp32dev
 upload_port = COM4
 ```
 Please note that the COM port number may vary. When using the ESP-PROG programmer, there are typically two available COM ports. Therefore, always select the one with the higher number.
+
+We have prepared a [PlatformIO project template](examples/PlatformIO%20project%20template) which you can modify for your needs.
 
 ## Detailed description
 
@@ -135,7 +137,7 @@ We have advanced custom firmware which is really flexible and supports the follo
 ✅ ...and more<br/>
 ❌ Home Assistant support is a work-in-progress
 
-It is likely we can save you significant development time. Feel free to reach out.
+It is likely we can save you significant development time. Feel free to [reach out](mailto:development@jsce.cz).
 
 ## Contributing
 
