@@ -37,6 +37,30 @@ This configuration makes it suitable for automation tasks such as:
    4. (optional) SW2 (standard limit switch), polarity does not matter.
    5. (optional) PR – photoresistor. The PR value should be between 30 and 90 kΩ.
 3. Attach jumper JP1 (connect pins). With jumper ON, the flashing/downloading of the SW is possible.
+4. Set up the development environment (Arduino IDE, Platformio, etc.)
+
+### Arduino IDE
+
+In the Arduino IDE, select the board and COM port as shown in the image below.
+
+![Arduino-IDE-board-selection](https://github.com/JSC-electronics/acdu-support-library/blob/4e140e8129ec6e51e7e4ce98a67223e90915db6f/documentation/Arduino-IDE-board-select.png)
+
+When using the ESP-PROG programmer, there are typically two available COM ports. Therefore, always select the one with the higher number.
+
+### Platformio IDE
+
+In the Platformio IDE, set up board and COM port in platformio.ini file:
+
+```ini
+[env:acdu]
+platform = espressif32
+framework = arduino
+board = esp32dev
+upload_port = COM4
+```
+Please note that the COM port number may vary. When using the ESP-PROG programmer, there are typically two available COM ports. Therefore, always select the one with the higher number.
+
+We have prepared a [PlatformIO project template](examples/PlatformIO%20project%20template) which you can modify for your needs.
 
 ## Detailed description
 
@@ -113,7 +137,7 @@ We have advanced custom firmware which is really flexible and supports the follo
 ✅ ...and more<br/>
 ❌ Home Assistant support is a work-in-progress
 
-It is likely we can save you significant development time. Feel free to reach out.
+It is likely we can save you significant development time. Feel free to [reach out](mailto:development@jsce.cz).
 
 ## Contributing
 

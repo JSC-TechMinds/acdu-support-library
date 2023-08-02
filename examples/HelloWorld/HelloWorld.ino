@@ -18,9 +18,6 @@
  * limitations under the License.
  */
 
-// Note: This library uses U8G2 display library by JSC electronics.
-// You can find it at https://github.com/olikraus/u8g2.
-
 #include <acdu.h>
 #include <U8g2lib.h>
 
