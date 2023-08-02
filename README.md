@@ -43,7 +43,11 @@ This configuration makes it suitable for automation tasks such as:
 
 In the Arduino IDE, select the board and COM port as shown in the image below.
 
-![Arduino-IDE-board-selection](https://github.com/JSC-electronics/acdu-support-library/blob/4e140e8129ec6e51e7e4ce98a67223e90915db6f/documentation/Arduino-IDE-board-select.png)
+![Arduino-IDE-board-selection](https://github.com/JSC-electronics/acdu-support-library/blob/69ab92bcbc8cbad11b842166eecbab312b00f64e/documentation/Arduino-IDE-board-port-select.png)
+
+Also, install the ACDU library via the library manager, as shown in the image below.
+
+![Arduino-IDE-library](https://github.com/JSC-electronics/acdu-support-library/blob/69ab92bcbc8cbad11b842166eecbab312b00f64e/documentation/Arduino-IDE-library.png)
 
 When using the ESP-PROG programmer, there are typically two available COM ports. Therefore, always select the one with the higher number.
 
