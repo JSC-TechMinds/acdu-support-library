@@ -37,7 +37,7 @@ void setup() {
         u8g2.setCursor(0,12);
         u8g2.print("Hello world!");
     } while (
-        u8g2.nextPage()
+        u8g2.nextPage();
     );
 }
 
