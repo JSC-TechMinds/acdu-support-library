@@ -149,7 +149,7 @@ If you think there is a missing feature in our ACDU unit, or you encounter an is
 
 ## License
 
-Copyright (c) 2003 JSC TechMinds. All rights reserved.
+Copyright (c) 2023-2024 JSC TechMinds. All rights reserved.
 
 Licensed under the [Apache-2.0](LICENSE) license.
 
