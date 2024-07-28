@@ -1,11 +1,11 @@
 # ACDU board
 
-[![Arduino_CI](https://github.com/JSC-electronics/acdu-support-library/actions/workflows/arduino_ci.yml/badge.svg)](https://github.com/JSC-electronics/acdu-support-library/actions/workflows/arduino_ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](https://github.com/JSC-electronics/acdu-support-library/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/JSC-electronics/acdu-support-library.svg?maxAge=3600)](https://github.com/JSC-electronics/acdu-support-library/releases)
-[![JSC TechMinds](https://img.shields.io/badge/JSC-TechMinds-green.svg)](https://www.jsce.cz/)
+[![Arduino_CI](https://github.com/JSC-TechMinds/acdu-support-library/actions/workflows/arduino_ci.yml/badge.svg)](https://github.com/JSC-TechMinds/acdu-support-library/actions/workflows/arduino_ci.yml)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](https://github.com/JSC-TechMinds/acdu-support-library/blob/main/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/JSC-TechMinds/acdu-support-library.svg?maxAge=3600)](https://github.com/JSC-TechMinds/acdu-support-library/releases)
+[![JSC TechMinds](https://img.shields.io/badge/JSC-TechMinds-green.svg)](https://www.jsctm.cz)
 [![Donate](https://img.shields.io/badge/donate-PayPal-blueviolet.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SESX9ABM7V8KA&source=url)
-![ACDU_V2](https://github.com/JSC-electronics/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2.png)
+![ACDU_V2](https://github.com/JSC-TechMinds/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2.png)
 
 The ACDU is a unit that contains one power output for a DC motor or other DC load, two digital 12V inputs, one analog input, and a connector for an OLED display. Additionally, it can connect to DS18B20 temperature sensors (up to five in total).
 
@@ -43,11 +43,11 @@ This configuration makes it suitable for automation tasks such as:
 
 In the Arduino IDE, select the board and COM port as shown in the image below.
 
-![Arduino-IDE-board-selection](https://github.com/JSC-electronics/acdu-support-library/blob/69ab92bcbc8cbad11b842166eecbab312b00f64e/documentation/Arduino-IDE-board-port-select.png)
+![Arduino-IDE-board-selection](https://github.com/JSC-TechMinds/acdu-support-library/blob/69ab92bcbc8cbad11b842166eecbab312b00f64e/documentation/Arduino-IDE-board-port-select.png)
 
 Also, install the ACDU library via the library manager, as shown in the image below.
 
-![Arduino-IDE-library](https://github.com/JSC-electronics/acdu-support-library/blob/69ab92bcbc8cbad11b842166eecbab312b00f64e/documentation/Arduino-IDE-library.png)
+![Arduino-IDE-library](https://github.com/JSC-TechMinds/acdu-support-library/blob/69ab92bcbc8cbad11b842166eecbab312b00f64e/documentation/Arduino-IDE-library.png)
 
 When using the ESP-PROG programmer, there are typically two available COM ports. Therefore, always select the one with the higher number.
 
@@ -100,7 +100,7 @@ ACDU supports micro SD cards; the slot is on the bottom side of the board. Pleas
 
 ### Pinout
 
-![ACDU_pinout](https://github.com/JSC-electronics/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2-description.png)
+![ACDU_pinout](https://github.com/JSC-TechMinds/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2-description.png)
 
 | Signal                                   | ESP GPIO |
 |------------------------------------------|----------|
@@ -124,7 +124,7 @@ ACDU supports micro SD cards; the slot is on the bottom side of the board. Pleas
 
 ### Dimensions
 
-![dimensions](https://github.com/JSC-electronics/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2-drawing.png)
+![dimensions](https://github.com/JSC-TechMinds/acdu-support-library/blob/bcd0f757ce4ca1667f882ca5b78d6a925fbf2f98/documentation/ACDU-V2-drawing.png)
 
 ## Custom firmware
 
@@ -141,7 +141,7 @@ We have advanced custom firmware which is really flexible and supports the follo
 ✅ ...and more<br/>
 ❌ Home Assistant support is a work-in-progress
 
-It is likely we can save you significant development time. Feel free to [reach out](mailto:development@jsce.cz).
+It is likely we can save you significant development time. Feel free to [reach out](mailto:development@jsctm.cz).
 
 ## Contributing
 

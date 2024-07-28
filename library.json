@@ -7,21 +7,16 @@
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/JSC-electronics/acdu-support-library"
+    "url": "https://github.com/JSC-TechMinds/acdu-support-library"
   },
    "authors":
   [
-    {
-      "name": "Vladimír Záhradník",
-      "email": "vladimir.zahradnik@jsce.cz",
-      "url": "https://github.com/vzahradnik",
-      "maintainer": true
-    },
-    {
-      "name": "JSC electronics",
-      "email": "development@jsce.cz",
-      "url": "https://github.com/jsc-electronics"
-    }
+		{
+			"name": "JSC TechMinds",
+			"email": "development@jsctm.cz",
+			"url": "https://github.com/JSC-TechMinds",
+			"maintainer": true
+		}
   ],
   "dependencies":
   [

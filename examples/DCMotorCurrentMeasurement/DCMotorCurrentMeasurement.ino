@@ -21,8 +21,8 @@
  * limitations under the License.
  */
 
-// Note: This library uses the Ticker library by JSC Electronics.
-// You can find it at https://github.com/JSC-electronics/Ticker.
+// Note: This library uses the Ticker library by JSC TechMinds.
+// You can find it at https://github.com/JSC-TechMinds/Ticker.
 
 #include <acdu.h>
 #include <Ticker.h>

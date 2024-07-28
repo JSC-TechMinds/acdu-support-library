@@ -3,7 +3,7 @@ Thanks for your interest in contributing to this free open source project! We ap
 
 ## Issues
 - Do you need help or have a question about using Arduino? Support requests should be made to the appropriate section of the [Arduino forum](http://forum.arduino.cc) rather than an issue report. **Issue reports are to be used to report bugs or make feature requests only.**
-- Search [existing pull requests and issues](https://github.com/JSC-electronics/acdu-support-library/issues?q=) to be sure it hasn't already been reported. If you have additional information to provide about an existing issue then please comment on that issue.
+- Search [existing pull requests and issues](https://github.com/JSC-TechMinds/acdu-support-library/issues?q=) to be sure it hasn't already been reported. If you have additional information to provide about an existing issue then please comment on that issue.
 - State the newest version of the Arduino IDE you have verified the issue with and which operating system you are using.
 - If you are using this library on PlatformIO, report version of PlatformIO Core and which operating system you are using.
 - The issue title should be concise yet descriptive. Vague titles make it difficult to know the purpose of the issue when looking through the list of reports and may cause your issue to not be given proper attention.
@@ -13,7 +13,7 @@ Thanks for your interest in contributing to this free open source project! We ap
 - If you find a solution to your problem update your issue report with an explanation of how you were able to fix it and close the issue.
 
 ## Pull Requests
-- Search [existing pull requests](https://github.com/JSC-electronics/acdu-support-library/pulls?q=) to see if one has already been submitted for this change. Search the [issues](https://github.com/JSC-electronics/acdu-support-library/issues?q=is%3Aissue) to see if there has been a discussion on this topic and whether your pull request can close any issues.
+- Search [existing pull requests](https://github.com/JSC-TechMinds/acdu-support-library/pulls?q=) to see if one has already been submitted for this change. Search the [issues](https://github.com/JSC-TechMinds/acdu-support-library/issues?q=is%3Aissue) to see if there has been a discussion on this topic and whether your pull request can close any issues.
 - Code formatting should be consistent with the style used in the existing code.
 - Don't leave commented out code. A record of this code is already preserved in the commit history.
 - All commits must be atomic. This means that the commit completely accomplishes a single task. Each commit should result in fully functional code. Multiple tasks should not be combined in a single commit, but a single task should not be split over multiple commits (e.g. one commit per file modified is not a good practice). For more information see http://www.freshconsulting.com/atomic-commits.
@@ -41,7 +41,7 @@ Requirements to build and run the unit tests:
 ### Setup
 Clone ACDU support library git repository:
 ```bash
-git clone git@github.com:JSC-electronics/acdu-support-library.git
+git clone git@github.com:JSC-TechMinds/acdu-support-library.git
 ```
 
 Install Ruby dependencies:
