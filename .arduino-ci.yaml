@@ -1,8 +1,0 @@
-compile:
-  libraries:
-    - U8g2
-    - SimpleTicker
-    - OneWire
-    - DallasTemperature
-  platforms:
-    - esp32
