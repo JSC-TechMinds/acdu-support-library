@@ -36,8 +36,8 @@ typedef enum {
 
 MOTOR_STATE ms = IDLE;
 
-Ticker motorActionTicker;
-Ticker analogMeasTicker;
+jsc::Ticker motorActionTicker;
+jsc::Ticker analogMeasTicker;
 
 void motorAction();
 void analogMeasurement();

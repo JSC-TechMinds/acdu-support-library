@@ -1,6 +1,6 @@
 # ACDU board
 
-[![Arduino_CI](https://github.com/JSC-TechMinds/acdu-support-library/actions/workflows/arduino_ci.yml/badge.svg)](https://github.com/JSC-TechMinds/acdu-support-library/actions/workflows/arduino_ci.yml)
+[![PlatformIO](https://github.com/JSC-TechMinds/acdu-support-library/actions/workflows/platformio.yml/badge.svg)](https://github.com/JSC-TechMinds/acdu-support-library/actions/workflows/platformio.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](https://github.com/JSC-TechMinds/acdu-support-library/blob/main/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/JSC-TechMinds/acdu-support-library.svg?maxAge=3600)](https://github.com/JSC-TechMinds/acdu-support-library/releases)
 [![JSC TechMinds](https://img.shields.io/badge/JSC-TechMinds-green.svg)](https://www.jsctm.cz)
